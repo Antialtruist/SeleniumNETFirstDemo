@@ -1,23 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using NodaTime;
+﻿using NodaTime;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace SeleniumNETFirstDemo.Src.Pages
 {
-    public class EditProfilePage
-    {
-		private IWebDriver driver;
-        //private WebDriverWait wait;
-
-        public EditProfilePage(IWebDriver driver)
-		{
-			//this.driver = driver;
-			//wait = new WebDriverWait(this.driver, TimeSpan.FromSeconds(10));
-			//PageFactory.InitElements(driver, this);
-		}
+	public partial class EditProfilePage : BasePage
+	{
+		public EditProfilePage(IWebDriver driver) : base(driver)
+        {
+        }
 
 		[FindsBy(How = How.CssSelector, Using = "#main>div>div:nth-child(1)")]
         public IWebElement changeAvatarField { get; set; }

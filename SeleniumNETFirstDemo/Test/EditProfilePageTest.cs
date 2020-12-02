@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.PageObjects;
 using SeleniumNETFirstDemo.Src.Pages;
 
 namespace SeleniumNETFirstDemo.Test
@@ -18,15 +17,12 @@ namespace SeleniumNETFirstDemo.Test
 		[SetUp]
 		public void Setup()
 		{
-			editProfilePage = new EditProfilePage(driver);
-			signInMenu = new SignInMenu(driver);
-			//PageFactory.InitElements(driver, this);
-			//PageFactory.InitElements(driver, editProfilePage);
-			//PageFactory.InitElements(driver, signInMenu);
-			driver = new ChromeDriver();
+            driver = new ChromeDriver();
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 			driver.Url = "https://eventsexpress-qa.azurewebsites.net/home/events?page=1";
 			driver.Manage().Window.Maximize();
+			editProfilePage = new EditProfilePage(driver);
+			signInMenu = new SignInMenu(driver);
 			signInMenu.authoriseUser(email, pass);
 			editProfilePage.clickEditProfileButton();
 		}

@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 
 namespace SeleniumNETFirstDemo.Src.Pages
 {
-    public class SignInMenu
+    public partial class SignInMenu : BasePage
     {
-        private IWebDriver driver;
-        //private WebDriverWait wait;
-
-        public SignInMenu(IWebDriver driver)
+        public SignInMenu(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
-            //wait = new WebDriverWait(this.driver, TimeSpan.FromSeconds(10));
-            //PageFactory.InitElements(this.driver, this);
         }
 
         [FindsBy(How = How.CssSelector, Using = ".MuiDialogActions-root>button:nth-child(2)")]
