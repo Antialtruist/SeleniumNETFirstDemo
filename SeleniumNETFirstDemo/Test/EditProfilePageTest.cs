@@ -19,7 +19,7 @@ namespace SeleniumNETFirstDemo.Test
 		{
             driver = new ChromeDriver();
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-			driver.Url = "https://eventsexpress-qa.azurewebsites.net/home/events?page=1";
+			driver.Url = "https://eventsexpress-test.azurewebsites.net/home/events?page=1";
 			driver.Manage().Window.Maximize();
 			editProfilePage = new EditProfilePage(driver);
 			signInMenu = new SignInMenu(driver);
